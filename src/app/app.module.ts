@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ProductComponent } from './product/product.component';
 import { SearchResultsComponent } from './search-results/search-results.component';
 import { ProductListComponent } from './product-list/product-list.component';
+import { CarDetailsComponent } from './car-details/car-details.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ProductListComponent } from './product-list/product-list.component';
     SearchPageComponent,
     SearchResultsComponent,
     ProductListComponent,
-    ProductComponent
+    ProductComponent,
+    CarDetailsComponent
 
   ],
   imports: [

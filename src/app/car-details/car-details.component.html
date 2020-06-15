@@ -1,0 +1,33 @@
+<div class="jumbotron" *ngIf='car'>
+    <h1 class="display-3">{{car.vehiclemake}}</h1>
+    <h2 class="display-4">{{car.vehiclemodel}} ({{car.vehicleyear}})</h2>
+    <h2 class="display-5"> {{car.vehicleprice.toLocaleString('en-US', {style: 'currency', currency: 'EUR'})}}</h2>
+    <img style="width: 80%; height: 400px;" class="imgStockItem no-image" src="./assets/img/no-car.jpg">
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a class="nav-link active" data-toggle="tab" href="#Specifications">Specifications</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" data-toggle="tab" href="#Damage">Damage</a>
+        </li>
+      </ul>
+      <div id="myTabContent" class="tab-content">
+        <div class="tab-pane fade active show" id="Specifications">
+            <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th scope="col">Attributes</th>
+                    <th scope="col">Values</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor='let attr of car | keyvalue'>
+                    <th>{{attr.key}}</th>
+                    <td>{{attr.value}}</td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+      </div>
+      <h3 class="display-5">({{car.lattitude}},{{car.longitude}} - Locate in Map)...TBD</h3> 
+  </div>

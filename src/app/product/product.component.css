@@ -4,3 +4,6 @@
     grid-column-gap: 10px;
     padding: 10px;
 }
+.disabled{
+    pointer-events:none;
+}
