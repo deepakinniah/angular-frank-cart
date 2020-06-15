@@ -13,6 +13,7 @@ import { SearchPageComponent } from './components/search-page/search-page.compon
 
 import { RestAPIService } from './services/rest/rest.service';
 import { CarDetailsComponent } from './components/car-details/car-details.component';
+import { CheckoutPageComponent } from './components/checkout-page/checkout-page.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { CarDetailsComponent } from './components/car-details/car-details.compon
     ProductListComponent,
     ProductComponent,
     ShoppingCartComponent,    
-    CarDetailsComponent 
+    CarDetailsComponent,
+    CheckoutPageComponent 
   ],
   imports: [
     BrowserModule,HttpClientModule, AppRoutingModule 

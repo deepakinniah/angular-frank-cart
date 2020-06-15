@@ -1,0 +1,75 @@
+
+<div class="row" style="margin-left:0;" *ngIf='cartList'>
+    <h3>Shopping Cart ({{cartList.length}} item{{cartList.length>1?'s':''}})</h3>
+    
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                <th scope="col">Make</th>
+                <th scope="col">Model</th>
+                <th scope="col">Manufactured Year</th>
+                <th scope="col">Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of cartList">
+                <td ><a routerLink="/carDetails/{{item.id}}" target="_blank">{{item.vehiclemodel}}</a></td>
+                <td>{{item.vehiclemake}}</td>
+                <td>{{item.vehicleyear}}</td>
+                <td>{{item.vehicleprice.toLocaleString('en-US', {style: 'currency', currency: 'EUR'})}}</td>
+                </tr>
+                <tr>
+                    <td ></td>
+                    <td></td>
+                    <td >Subtotal:</td>
+                    <th>{{calcTotal().toLocaleString('en-US', {style: 'currency', currency: 'EUR'})}}</th>
+                    </tr>
+            </tbody>
+        </table>
+
+        <form>
+            <fieldset>
+              <legend>Payment Option and Delivery Details</legend>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+              </div>
+              <div class="form-group">
+                <label for="exampleTextarea">Delivery Address</label>
+                <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+              </div>             
+              <fieldset class="form-group">
+                <legend>Payment option</legend>
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
+                    Pay with Bank
+                  </label>
+                </div>
+                <div class="form-check">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2">
+                    Pay with Carid/Debit card
+                  </label>
+                </div>
+                <div class="form-check disabled">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios3" value="option3" disabled="">
+                    Cash on delivery
+                  </label>
+                </div>
+              </fieldset>
+              <fieldset class="form-group">
+                <legend>Terms & conditions</legend>
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <input class="form-check-input" type="checkbox" value="" checked="">
+                    Accept all terms and conditions
+                  </label>
+                </div>
+              </fieldset>
+              <button type="button" class="btn btn-primary">Continue...</button>
+            </fieldset>
+          </form>
+</div>
