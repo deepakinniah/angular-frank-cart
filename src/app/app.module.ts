@@ -7,12 +7,19 @@ import { RestAPIService } from './services/rest/rest.service';
 import { AboutPageComponent } from './about-page/about-page.component';
 import { SearchPageComponent } from './search-page/search-page.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ProductComponent } from './product/product.component';
+import { SearchResultsComponent } from './search-results/search-results.component';
+import { ProductListComponent } from './product-list/product-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AboutPageComponent,
-    SearchPageComponent
+    SearchPageComponent,
+    SearchResultsComponent,
+    ProductListComponent,
+    ProductComponent
+
   ],
   imports: [
     BrowserModule,

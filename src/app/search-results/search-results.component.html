@@ -1,0 +1,17 @@
+<div class="row search-results">
+    <div class="col-lg-12">
+      <div class="page-header">
+        <h1 id="forms" *ngIf='carList'>{{carList.length}} Cars found from {{search ?carList[0].warehousename:"all warehouses"}}</h1>
+        <p class="bs-component"><br>
+            <button type="button" class="btn btn-outline-primary" (click)='sortOrFilterCall($event,"orderByDateDesc")'>Date (Desc)</button>
+            <button type="button" class="btn btn-outline-primary" (click)='sortOrFilterCall($event,"filterByLicensed")'>Licenced Only</button>
+            <button type="button" class="btn btn-outline-primary" (click)='sortOrFilterCall($event,"orderByPriceDesc")'>Price (Desc)</button>
+            </p>
+      </div>
+    </div>  
+</div>
+<div class="row">
+  <div class="col-lg-8">
+      <product-list [cars]="carList"></product-list>
+  </div>
+</div>

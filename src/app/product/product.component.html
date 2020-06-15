@@ -1,0 +1,31 @@
+<div class="list-group">
+  <div class="card bg-light mb-3" style="min-width: 20rem;" [ngClass]="{'disabled': !car.vehiclelicensed}">
+    <div class="card-header">
+      <img style="width: 50px;" data-src="./asset/img/car.png" src="./assets/img/car.png">
+      <span style="padding: 5px;">{{car.vehiclemake}}</span>
+    </div>
+  <div class="card-body">
+    <table class="table table-hover">
+      <tbody>
+        <tr>
+          <td style="vertical-align: middle;border:0;">Model</td>
+          <td style="vertical-align: middle;border:0;">{{car.vehiclemodel}}</td>
+        </tr>
+        <tr>
+          <td style="vertical-align: middle;border:0;">Year Manufactured</td>
+          <td style="vertical-align: middle;border:0;">{{car.vehicleyear}}</td>
+        </tr>
+        <tr>
+          <td style="vertical-align: middle;border:0;">Price</td>
+          <td style="vertical-align: middle;border:0;">{{car.vehicleprice.toLocaleString('en-US', {style: 'currency', currency: 'EUR'})}}</td>
+        </tr>
+        <tr>
+          <td style="vertical-align: middle;border:0;">Date Added</td>
+          <td style="vertical-align: middle;border:0;">{{car.vehicleaddeddate}}</td>
+        </tr>
+      </tbody>
+    </table>
+      </div>
+  </div>
+  
+</div>
