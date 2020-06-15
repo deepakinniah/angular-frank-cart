@@ -1,0 +1,21 @@
+<div class="row" *ngIf='cars'>
+<h3>Shopping Cart ({{cars.length}} item{{cars.length>1?'s':''}})</h3>
+<div class="bs-component">
+  <table class="table table-hover">
+  <tbody>
+    <tr  *ngFor="let car of cars">
+      <td style="vertical-align: middle;border:0;">{{car.vehiclemodel}}</td>
+      <td style="vertical-align: middle;border:0;">{{car.vehicleprice.toLocaleString('en-US', {style: 'currency', currency: 'EUR'})}}</td>
+      <td style="vertical-align: middle;border:0;"><button type="button" class="btn btn-primary float-right" (click)="removeCar(car)">Remove</button></td>
+  </tr>
+  <tr *ngIf='cars.length>0'>
+    <td>Subtotal</td>
+    <th>{{calcTotal().toLocaleString('en-US', {style: 'currency', currency: 'EUR'})}}</th>
+    <td></td>
+</tr>
+</tbody>
+  </table>
+  <nav *ngIf='cars.length>0'>
+    <a routerLink="/checkout"><button class="btn btn-primary" type="submit">Checkout</button></a>
+  </nav>
+</div>

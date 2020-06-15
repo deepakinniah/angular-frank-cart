@@ -1,4 +1,4 @@
-import { Component, OnInit, Input} from '@angular/core';
+import { Component, OnInit, Output, Input, EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'product-list',
@@ -14,5 +14,9 @@ export class ProductListComponent implements OnInit {
   }
 
   @Input() cars: any[];
+  @Output() carAdded = new EventEmitter();
+  addCarToCart(car) {
+    this.carAdded.emit(car);
+  }
 
 }

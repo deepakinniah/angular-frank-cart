@@ -1,16 +1,19 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-import { AppRoutingModule } from './app-routing';
-import { AppComponent } from './app.component';
-import { RestAPIService } from './services/rest/rest.service';
-import { AboutPageComponent } from './about-page/about-page.component';
-import { SearchPageComponent } from './search-page/search-page.component';
+import { AppRoutingModule } from './app.routing';
 import { HttpClientModule } from '@angular/common/http';
-import { ProductComponent } from './product/product.component';
-import { SearchResultsComponent } from './search-results/search-results.component';
-import { ProductListComponent } from './product-list/product-list.component';
-import { CarDetailsComponent } from './car-details/car-details.component';
+
+import { AppComponent } from './app.component';
+import { ProductListComponent } from './components/product-list/product-list.component';
+import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
+import { ProductComponent } from './components/product/product.component';
+import { SearchResultsComponent } from './components/search-results/search-results.component';
+import { AboutPageComponent } from './components/about-page/about-page.component';
+import { SearchPageComponent } from './components/search-page/search-page.component';
+
+import { RestAPIService } from './services/rest/rest.service';
+import { CarDetailsComponent } from './components/car-details/car-details.component';
+
 
 @NgModule({
   declarations: [
@@ -20,13 +23,11 @@ import { CarDetailsComponent } from './car-details/car-details.component';
     SearchResultsComponent,
     ProductListComponent,
     ProductComponent,
-    CarDetailsComponent
-
+    ShoppingCartComponent,    
+    CarDetailsComponent 
   ],
   imports: [
-    BrowserModule,
-    HttpClientModule, 
-    AppRoutingModule 
+    BrowserModule,HttpClientModule, AppRoutingModule 
   ],
   providers: [RestAPIService],
   bootstrap: [AppComponent]

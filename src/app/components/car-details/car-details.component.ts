@@ -13,7 +13,11 @@ export class CarDetailsComponent  {
   constructor(private ar : ActivatedRoute, private rest: RestAPIService) { 
     this.carId=this.ar.snapshot.params['id'];
     rest.getCarService("/getbyid/"+this.carId).subscribe(t=>{this.car=t;});
+    console.log(this.car);
   }
   ngOnInit() {
+    //
+    //this.rest.getCarService("/"+this.carId).subscribe(b=>this.car=b);
+    //console.log(this.car);
   }
 }

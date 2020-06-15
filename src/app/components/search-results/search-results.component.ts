@@ -24,7 +24,20 @@ export class SearchResultsComponent {
       r.getCarService("orderByVehicleId").subscribe(t=>{this.carList=t;});
       this.search = '';
     }
+    r.getCartService("orderByPriceDesc").subscribe(t=>{this.cartList=t;});
   }
+
+  addCarToCart(car) {
+    const productExistInCart = this.cartList.find(({id}) => id === car.id); 
+    if (!productExistInCart) {
+      this.r.postCartService(car).subscribe(t=>this.cartList.push(car));
+      return;
+    }
+    productExistInCart.num += 1;
+  }
+   removeCar(car) {
+    this.cartList = this.cartList.filter(({vehiclemake}) => vehiclemake !== car.vehiclemake)
+   }
 
   public sortOrFilterCall(event,param) {
    this.r.getCarService(param).subscribe(t=>{this.carList=t;});
